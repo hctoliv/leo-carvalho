@@ -14,7 +14,19 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
   <link rel="preload" as="image" href="video/hero-leo.jpg">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=11">
+  <script>
+    (function () {
+      try {
+        var force = /[?&]intro\b/.test(location.search);
+        var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!calm && (force || !sessionStorage.getItem('leo-intro'))) {
+          document.documentElement.classList.add('intro-on');
+          if (!/[?&]intro=\d/.test(location.search)) setTimeout(function () { document.documentElement.classList.remove('intro-on'); }, 6000);
+        }
+      } catch (e) {}
+    })();
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -76,6 +88,36 @@
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M15 9a4.2 4.2 0 0 1 0 6m2.6-8.6a8 8 0 0 1 0 11.2"/>
     </symbol>
   </svg>
+
+
+  <!-- INTRO: contagem, groove na caixa e prato de ataque -->
+  <div class="intro" aria-hidden="true">
+    <div class="intro__flash"></div>
+    <div class="intro__stage">
+      <div class="intro__drum">
+        <svg viewBox="0 0 200 200" class="intro__kit">
+          <defs>
+            <radialGradient id="pele" cx="50%" cy="45%" r="60%">
+              <stop offset="0" stop-color="#2b2521"/>
+              <stop offset="1" stop-color="#110e0c"/>
+            </radialGradient>
+          </defs>
+          <g class="intro__lugs" fill="#c9a14a"><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(0 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(36 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(72 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(108 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(144 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(180 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(216 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(252 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(288 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(324 100 100)"/></g>
+          <circle cx="100" cy="100" r="91" fill="none" stroke="#c9a14a" stroke-width="4"/>
+          <circle class="intro__head" cx="100" cy="100" r="86" fill="url(#pele)"/>
+          <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(242,235,223,.08)" stroke-width="1"/>
+          <use href="#sankofa" x="76" y="76" width="48" height="48" class="intro__mark"/>
+        </svg>
+        <div class="intro__ripples"></div>
+        <p class="intro__count"></p>
+        <span class="intro__stick intro__stick--l"></span>
+        <span class="intro__stick intro__stick--r"></span>
+      </div>
+      <p class="intro__name"><span>L</span><span>É</span><span>O</span><i></i><span>C</span><span>A</span><span>R</span><span>V</span><span>A</span><span>L</span><span>H</span><span>O</span></p>
+      <p class="intro__kicker">Baterista</p>
+    </div>
+    <button type="button" class="intro__skip">Pular</button>
+  </div>
 
   <!-- NAV -->
   <header class="nav" id="top">
@@ -541,6 +583,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=7" defer></script>
+  <script src="main.js?v=12" defer></script>
 </body>
 </html>

@@ -522,6 +522,38 @@ strong { font-weight: 700; color: #fff; }
   .partner figcaption b { font-size: 15px; }
 }
 
+/* ---------- intro: efeito de bateria ---------- */
+.intro { display: none; }
+html.intro-on { overflow: hidden; }
+html.intro-on .intro { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: var(--ink); cursor: pointer; }
+html.intro-on .intro::before { content: ""; position: absolute; inset: 0; background: var(--kente) repeat-x 0 100%; background-size: auto 10px; opacity: .9; transform-origin: left; animation: introStripe 2.4s linear both; }
+@keyframes introStripe { from { clip-path: inset(calc(100% - 10px) 100% 0 0); } to { clip-path: inset(calc(100% - 10px) 0 0 0); } }
+.intro__stage { position: relative; display: grid; justify-items: center; gap: clamp(18px, 3vh, 30px); will-change: transform, opacity; }
+.intro__count { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; font: 700 clamp(56px, 9vw, 120px)/1 var(--ff-display); letter-spacing: -.05em; color: var(--gold); opacity: 0; pointer-events: none; }
+.intro__drum { position: relative; width: min(58vw, 46vh, 340px); aspect-ratio: 1; }
+.intro__kit { width: 100%; height: 100%; display: block; overflow: visible; }
+.intro__head { transition: fill .2s; }
+.intro__mark { color: var(--gold); opacity: .35; }
+.intro__ripples { position: absolute; inset: 0; pointer-events: none; }
+.intro__ripples span { position: absolute; inset: 7%; border-radius: 50%; border: 2px solid var(--gold); opacity: 0; }
+.intro__stick { position: absolute; top: -40%; width: 3.2%; height: 82%; border-radius: 4px 4px 999px 999px; background: linear-gradient(90deg, #e9d3a8, #c9a46a 55%, #a67f48); box-shadow: 0 14px 30px rgba(0, 0, 0, .55); transform-origin: 50% 0; z-index: 2; }
+.intro__stick::before { content: ""; position: absolute; bottom: -2%; left: 50%; width: 170%; aspect-ratio: 1 / 1.3; transform: translateX(-50%); border-radius: 50%; background: #f1e2c2; }
+.intro__stick--l { left: 6%; transform: rotate(-6deg) scaleY(.84); }
+.intro__stick--r { right: 6%; transform: rotate(6deg) scaleY(.84); }
+.intro__name { margin: 0; display: flex; gap: .02em; font: 700 clamp(34px, 6.4vw, 72px)/1 var(--ff-display); letter-spacing: -.04em; color: var(--bone); }
+.intro__name i { width: .28em; }
+.intro__name span { opacity: 0; transform: translateY(40%) scale(.6); display: inline-block; }
+.intro__name span.is-on { opacity: 1; transform: none; transition: transform .18s cubic-bezier(.3, 1.6, .5, 1), opacity .1s; }
+.intro__name span:nth-child(n+5) { color: var(--gold); font-style: italic; font-weight: 500; }
+.intro__kicker { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase; color: var(--sand); opacity: 0; transition: opacity .3s; }
+.intro__kicker.is-on { opacity: 1; }
+.intro__flash { position: absolute; inset: 0; background: radial-gradient(circle at 50% 45%, rgba(226, 189, 102, .95), rgba(201, 161, 74, .35) 40%, rgba(13, 11, 10, 0) 70%); opacity: 0; pointer-events: none; }
+.intro__skip { position: absolute; right: 20px; bottom: 26px; padding: 10px 16px; background: none; border: 1px solid rgba(242, 235, 223, .25); color: var(--sand); font: 600 11px/1 var(--ff); letter-spacing: .2em; text-transform: uppercase; cursor: pointer; }
+.intro__skip:hover { border-color: var(--gold); color: var(--gold-hi); }
+/* o hero espera a intro acabar */
+html.intro-on .hero__video, html.intro-on .hero__title .line > * { animation-play-state: paused; }
+html.intro-on .hero .reveal { opacity: 0 !important; transform: translateY(28px) !important; }
+
 /* ---------- revelar no scroll ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }

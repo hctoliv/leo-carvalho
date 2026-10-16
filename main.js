@@ -4,6 +4,101 @@
   const toggle = document.querySelector('.nav__toggle');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // intro: contagem 1-2-3-4, groove na caixa, prato de ataque e mergulho na pele
+  const root = document.documentElement;
+  const intro = document.querySelector('div.intro');
+  if (intro && root.classList.contains('intro-on')) {
+    const stage = intro.querySelector('.intro__stage');
+    const drum = intro.querySelector('.intro__drum');
+    const head = intro.querySelector('.intro__head');
+    const ripples = intro.querySelector('.intro__ripples');
+    const count = intro.querySelector('.intro__count');
+    const flash = intro.querySelector('.intro__flash');
+    const kicker = intro.querySelector('.intro__kicker');
+    const letters = [...intro.querySelectorAll('.intro__name span')];
+    const sticks = { l: intro.querySelector('.intro__stick--l'), r: intro.querySelector('.intro__stick--r') };
+    const rest = { l: 'rotate(-6deg) scaleY(.84)', r: 'rotate(6deg) scaleY(.84)' };
+    const timers = [];
+    let done = false, lit = 0;
+
+    const ripple = (strength = 1) => {
+      const r = document.createElement('span');
+      ripples.appendChild(r);
+      r.animate([
+        { transform: 'scale(.35)', opacity: .9 * strength },
+        { transform: `scale(${1.2 + strength * .9})`, opacity: 0 }
+      ], { duration: 520 + strength * 260, easing: 'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => r.remove();
+    };
+    const strike = (side, strength = 1) => {
+      // a ponta desce na pele: gira para dentro e encurta um pouco (profundidade)
+      const s = sticks[side], a = rest[side], hit = side === 'l' ? 'rotate(-19deg) scaleY(1)' : 'rotate(19deg) scaleY(1)';
+      s.animate([{ transform: a }, { transform: hit, offset: .45 }, { transform: a }], { duration: 150, easing: 'ease-out' });
+      setTimeout(() => {
+        ripple(strength);
+        drum.animate([{ transform: 'scale(1)' }, { transform: `scale(${1 - .035 * strength})` }, { transform: 'scale(1)' }], { duration: 140 });
+        head.style.fill = '#3a322c';
+        setTimeout(() => { head.style.fill = ''; }, 90);
+        stage.animate([{ transform: 'translate(0,0)' }, { transform: `translate(${(Math.random() - .5) * 4 * strength}px, ${2 * strength}px)` }, { transform: 'translate(0,0)' }], { duration: 110 });
+      }, 60);
+    };
+    const letter = () => { if (letters[lit]) letters[lit++].classList.add('is-on'); };
+    const mark = intro.querySelector('.intro__mark');
+    const say = n => {
+      count.textContent = n;
+      mark.style.opacity = '0';
+      if (n === 4) setTimeout(() => { mark.style.opacity = ''; }, 300);
+      count.animate([
+        { opacity: 0, transform: 'scale(1.6)' },
+        { opacity: 1, transform: 'scale(1)', offset: .25 },
+        { opacity: 0, transform: 'scale(.9)' }
+      ], { duration: 280, easing: 'ease-out' });
+      // contagem: as baquetas batem uma na outra acima da caixa
+      sticks.l.animate([{ transform: rest.l }, { transform: 'rotate(-30deg) scaleY(.8)' }, { transform: rest.l }], { duration: 140 });
+      sticks.r.animate([{ transform: rest.r }, { transform: 'rotate(30deg) scaleY(.8)' }, { transform: rest.r }], { duration: 140 });
+      ripple(.35);
+    };
+    const finish = (quick) => {
+      if (done) return;
+      done = true;
+      timers.forEach(clearTimeout);
+      try { sessionStorage.setItem('leo-intro', '1'); } catch (e) {}
+      letters.forEach(l => l.classList.add('is-on'));
+      const out = quick ? 260 : 650;
+      // mergulho: a caixa cresce e a tela se abre para o site
+      stage.animate([{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(5)', opacity: 0 }], { duration: out, easing: 'cubic-bezier(.6,0,.3,1)', fill: 'forwards' });
+      intro.animate([{ opacity: 1 }, { opacity: 0 }], { duration: out * .7, delay: out * .3, easing: 'ease-in', fill: 'forwards' })
+        .onfinish = () => { root.classList.remove('intro-on'); intro.remove(); };
+    };
+    // ?intro=1800 congela a intro nesse instante (só para conferir os quadros)
+    const freeze = parseInt(new URLSearchParams(location.search).get('intro'), 10);
+    const at = (ms, fn) => { if (!(freeze >= 0) || ms <= freeze) timers.push(setTimeout(fn, ms)); };
+
+    // contagem do baterista
+    [1, 2, 3, 4].forEach((n, i) => at(150 + i * 300, () => say(n)));
+    // groove (caixa, mão alternada, uns fantasmas)
+    const groove = [[1350, 'r', 1], [1500, 'l', .7], [1650, 'r', 1], [1725, 'r', .45], [1800, 'l', .8], [1950, 'r', 1], [2025, 'l', .5], [2100, 'r', .8], [2175, 'l', .6]];
+    groove.forEach(([ms, side, st]) => at(ms, () => { strike(side, st); letter(); }));
+    // prato de ataque
+    at(2380, () => {
+      strike('l', 1.4); strike('r', 1.4);
+      setTimeout(() => {
+        while (lit < letters.length) letter();
+        kicker.classList.add('is-on');
+        ripple(1.8); ripple(1.2);
+        flash.animate([{ opacity: 0 }, { opacity: .9, offset: .15 }, { opacity: 0 }], { duration: 700, easing: 'ease-out' });
+        stage.animate([
+          { transform: 'translate(0,0)' }, { transform: 'translate(-6px,4px)' }, { transform: 'translate(5px,-3px)' },
+          { transform: 'translate(-3px,2px)' }, { transform: 'translate(0,0)' }
+        ], { duration: 320 });
+      }, 60);
+    });
+    at(3050, () => finish(false));
+    if (freeze >= 0) setTimeout(() => document.getAnimations().forEach(a => a.pause()), freeze + 90);
+
+    intro.addEventListener('click', () => finish(true));
+    addEventListener('keydown', () => finish(true), { once: true });
+  }
+
   // nav: fundo ao rolar + menu mobile
   const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 40);
   addEventListener('scroll', onScroll, { passive: true });
