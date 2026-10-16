@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
   <link rel="preload" as="image" href="video/hero-leo.jpg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=5">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,6 +55,15 @@
     <symbol id="mail" viewBox="0 0 24 24">
       <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 6h17v12h-17zM3.5 6.5l8.5 6.5 8.5-6.5"/>
     </symbol>
+    <symbol id="arrow" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/>
+    </symbol>
+    <symbol id="expand" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
+    </symbol>
+    <symbol id="download" viewBox="0 0 24 24">
+      <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m-5-5 5 5 5-5M5 20h14"/>
+    </symbol>
     <symbol id="yt" viewBox="0 0 24 24">
       <path fill="currentColor" d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.7 12 4.7 12 4.7s-6.8 0-8.5.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2c1.7.5 8.5.5 8.5.5s6.8 0 8.5-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.6 3.1Z"/>
     </symbol>
@@ -78,9 +87,9 @@
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#historia">História</a>
         <a href="#videos">Vídeos</a>
+        <a href="#fotos">Fotos</a>
         <a href="#artistas">Artistas</a>
-        <a href="#estudio">Estúdio</a>
-        <a href="#agora">Agora</a>
+        <a href="#apresentacao">Apresentação</a>
         <a href="#contato">Contato</a>
       </nav>
       <a class="btn btn--gold btn--sm nav__cta" href="https://wa.me/5511993718778?text=Oi%20L%C3%A9o%21%20Vi%20seu%20site%20e%20queria%20conversar%20sobre%20um%20trabalho." target="_blank" rel="noopener">Contratar</a>
@@ -141,6 +150,9 @@
           <p>No caminho apareceu <strong>Paulinho Oliveira</strong>, que acreditou quando ainda não tinha nada pra acreditar e ajudou o Léo a dar os primeiros passos na música. O caminho foi árduo. Valeu cada baqueta quebrada.</p>
           <p>Estudou na antiga <strong>ULM, Universidade Livre de Música Tom Jobim</strong> (hoje EMESP), teve aulas particulares com <strong>Ferrinho Batera</strong>, <strong>Mike Dias</strong> e <strong>Rubinho Barsotti</strong>, passou pelo Instituto de Música IMPD e seguiu no <strong>Instituto de Música Fabiano Manhas</strong>, onde também deu aula de bateria para iniciantes. E nunca parou de estudar com grandes nomes da bateria brasileira e mundial.</p>
           <p>Hoje, aos 39 anos, são <strong>23 anos de bateria profissional</strong>, entre São Paulo e Madrid, tocando samba com a reverência de quem aprendeu com os mestres e a curiosidade de quem ama a música do mundo inteiro.</p>
+          <figure class="story__photo">
+            <img src="img/fotos/ademir-bumbo.jpg" alt="Léo Carvalho agachado ao lado do bumbo com o nome Ademir Batera, no show do Fundo de Quintal" width="1200" height="1500" loading="lazy">
+          </figure>
           <aside class="story__note">
             <span class="story__note-year">2023</span>
             <p><b>Grupo Fundo de Quintal.</b> Sub do padrinho <strong>Ademir Batera</strong>, “o maior baterista de samba de todos os tempos”, nas palavras do Léo.</p>
@@ -225,6 +237,33 @@
       </div>
     </section>
 
+    <!-- FOTOS -->
+    <section class="gallery" id="fotos">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="label">Fotos</p>
+          <h2>De perto, <em>no palco.</em></h2>
+          <p>Registros dos shows e da estrada. Toque numa foto para ampliar.</p>
+        </header>
+        <div class="gallery__grid">
+          <figure class="gallery__item gallery__item--big reveal"><button type="button" class="gallery__open" data-full="img/fotos/obrigado-samba.jpg" aria-label="Ampliar foto: “Obrigado, Samba!” · 2026"><img src="img/fotos/obrigado-samba.jpg" alt="Léo Carvalho na bateria, de boné, sob luz azul" width="1200" height="1600" loading="lazy"></button><figcaption>“Obrigado, Samba!” · 2026</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-close.jpg" aria-label="Ampliar foto: Izzy Gordon · Concha Acústica, Salto–SP"><img src="img/fotos/izzy-close.jpg" alt="Léo Carvalho tocando na bateria Odery, de boina branca" width="1400" height="1866" loading="lazy"></button><figcaption>Izzy Gordon · Concha Acústica, Salto–SP</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-duo.jpg" aria-label="Ampliar foto: Com Izzy Gordon"><img src="img/fotos/izzy-duo.jpg" alt="Izzy Gordon e Léo Carvalho no palco" width="1024" height="1365" loading="lazy"></button><figcaption>Com Izzy Gordon</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/kit-odery.jpg" aria-label="Ampliar foto: Tour Sementes da Tamarineira"><img src="img/fotos/kit-odery.jpg" alt="Léo Carvalho atrás do kit Odery com peles Aquarian" width="1024" height="1365" loading="lazy"></button><figcaption>Tour Sementes da Tamarineira</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-canta.jpg" aria-label="Ampliar foto: Izzy Gordon canta Jorge Aragão"><img src="img/fotos/izzy-canta.jpg" alt="Izzy Gordon cantando de terno branco, com Léo na bateria ao fundo" width="1200" height="1600" loading="lazy"></button><figcaption>Izzy Gordon canta Jorge Aragão</figcaption></figure>
+          <figure class="gallery__item gallery__item--wide reveal"><button type="button" class="gallery__open" data-full="img/fotos/ladeira-baquetas.jpg" aria-label="Ampliar foto: Samba da Ladeira · Tour acústico, São Carlos–SP"><img src="img/fotos/ladeira-baquetas.jpg" alt="Léo Carvalho sorrindo com a baqueta para o alto" width="1235" height="1229" loading="lazy"></button><figcaption>Samba da Ladeira · Tour acústico, São Carlos–SP</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/leo-sorriso.jpg" aria-label="Ampliar foto: Resenha de estrada"><img src="img/fotos/leo-sorriso.jpg" alt="Léo Carvalho sorrindo com as baquetas na mão" width="1200" height="2134" loading="lazy"></button><figcaption>Resenha de estrada</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/segunda-absoluta.jpg" aria-label="Ampliar foto: Segunda Absoluta"><img src="img/fotos/segunda-absoluta.jpg" alt="Léo Carvalho na bateria durante roda da Segunda Absoluta, em preto e branco" width="1179" height="2096" loading="lazy"></button><figcaption>Segunda Absoluta</figcaption></figure>
+        </div>
+      </div>
+      <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
+        <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
+        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Foto anterior"><svg><use href="#arrow"/></svg></button>
+        <figure><img alt=""><figcaption></figcaption></figure>
+        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Próxima foto"><svg><use href="#arrow"/></svg></button>
+      </div>
+    </section>
+
     <!-- ARTISTAS -->
     <section class="artists" id="artistas">
       <div class="wrap">
@@ -248,6 +287,10 @@
           <p class="label">Estúdio</p>
           <h2>Bateria <em>de disco.</em></h2>
           <p>Integra a equipe de gravação do selo alemão <strong>Tropical Diáspora Records</strong> e, no Brasil, da gravadora e selo <strong>Anel de Bamba</strong>. Grava grupos, duplas e cantores por vários estados do Brasil e pela Europa, nos mais diversos gêneros.</p>
+          <figure class="studio__cover">
+            <img src="img/fotos/iluminar-depois.jpg" alt="Capa do single Iluminar depois, do Samba da Ladeira" width="1086" height="1441" loading="lazy">
+            <figcaption><b>“Iluminar depois”</b> · Samba da Ladeira. Mais uma obra eternizada, com o Léo na batera.</figcaption>
+          </figure>
         </div>
         <div class="studio__lists">
           <div class="reveal">
@@ -292,6 +335,104 @@
           <li><b>O mundo no black power de Tayó</b><span>Musical</span></li>
           <li><b>Samba e Jazz</b><span>Musical infantil</span></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- APRESENTAÇÃO -->
+    <section class="deck" id="apresentacao" aria-roledescription="carrossel" aria-label="Apresentação do Léo Carvalho">
+      <div class="wrap">
+        <header class="deck__head reveal">
+          <div>
+            <p class="label">Apresentação</p>
+            <h2>O Léo em <em>6 slides.</em></h2>
+          </div>
+          <div class="deck__tools">
+            <button type="button" class="deck__tool" data-deck-full><svg><use href="#expand"/></svg> Tela cheia</button>
+            <a class="deck__tool" href="apresentacao-leo-carvalho.pdf" download><svg><use href="#download"/></svg> Baixar PDF</a>
+          </div>
+        </header>
+        <div class="deck__frame reveal">
+          <div class="deck__track" tabindex="0" aria-live="polite">
+
+            <article class="slide slide--cover" aria-label="Slide 1 de 6: Capa">
+              <figure class="slide__photo"><img src="img/fotos/obrigado-samba.jpg" alt="Léo Carvalho tocando bateria" width="1200" height="1600" loading="lazy"></figure>
+              <div class="slide__body">
+                <p class="slide__n">01 · Capa</p>
+                <h3>Léo Carvalho<br><em>Baterista profissional</em></h3>
+                <p>Com 23 anos de experiência, Léo Carvalho é um baterista versátil e colaborador de artistas renomados.</p>
+                <p class="slide__sign">Vamo q vamo . . . #GostoAssim</p>
+              </div>
+            </article>
+
+            <article class="slide" aria-label="Slide 2 de 6: Biografia">
+              <figure class="slide__photo"><img src="img/fotos/leo-sorriso.jpg" alt="Léo Carvalho sorrindo com as baquetas" width="1200" height="2134" loading="lazy"></figure>
+              <div class="slide__body">
+                <p class="slide__n">02 · Biografia</p>
+                <h3>Formação de <em>mestre.</em></h3>
+                <p>Léo Carvalho, 39 anos, é baterista com 23 anos de experiência profissional. Formado pela EMESP, a antiga ULM Tom Jobim, e pelo Instituto de Música Fabiano Manhas, onde também foi professor de bateria para iniciantes.</p>
+                <p>Estudou com Ferrinho Batera, Mike Dias e Rubinho Barsotti, e segue estudando com grandes nomes da bateria brasileira e mundial.</p>
+              </div>
+            </article>
+
+            <article class="slide slide--mosaic" aria-label="Slide 3 de 6: Colaborações notáveis">
+              <div class="slide__mosaic" aria-hidden="true">
+                <img src="img/fotos/izzy-canta.jpg" alt="" loading="lazy">
+                <img src="img/netinho-palco.jpg" alt="" loading="lazy">
+                <img src="img/fotos/ademir-bumbo.jpg" alt="" loading="lazy">
+                <img src="img/fotos/iluminar-depois.jpg" alt="" loading="lazy">
+              </div>
+              <div class="slide__body">
+                <p class="slide__n">03 · Colaborações notáveis</p>
+                <h3>Com artistas <em>renomados.</em></h3>
+                <ul class="slide__names"><li>Ellen Oléria</li><li>Daniela Mercury</li><li>Emicida</li><li>Beth Carvalho</li><li>Exaltasamba</li><li>Racionais MC's</li></ul>
+                <p>E Izzy Gordon, Netinho de Paula, Arlindo Cruz, Fundo de Quintal e mais de 80 artistas, do samba ao rap.</p>
+              </div>
+            </article>
+
+            <article class="slide" aria-label="Slide 4 de 6: Projetos recentes">
+              <figure class="slide__photo"><img src="img/fotos/ladeira-baquetas.jpg" alt="Léo Carvalho tocando com a baqueta para o alto" width="1235" height="1229" loading="lazy"></figure>
+              <div class="slide__body">
+                <p class="slide__n">04 · Projetos recentes</p>
+                <h3>No estúdio <em>e na estrada.</em></h3>
+                <dl class="slide__facts">
+                  <div><dt>Disco</dt><dd><b>“Samba do meu jeito”</b>, o 1º disco instrumental, com grandes nomes do instrumental nacional e internacional. Lançamento no 2º semestre de 2027.</dd></div>
+                  <div><dt>Tour</dt><dd>Workshops e master class <b>“A bateria pop no samba tradicional”</b> pelas capitais do Brasil.</dd></div>
+                  <div><dt>Selos</dt><dd>Tropical Diáspora Records (Alemanha) e Anel de Bamba.</dd></div>
+                </dl>
+              </div>
+            </article>
+
+            <article class="slide" aria-label="Slide 5 de 6: Educação e ensino">
+              <figure class="slide__photo"><img src="img/fotos/partitura-fdq.jpg" alt="Partitura da abertura do show do Fundo de Quintal no tablet, ao lado da bateria" width="720" height="899" loading="lazy"></figure>
+              <div class="slide__body">
+                <p class="slide__n">05 · Educação e ensino</p>
+                <h3>Quem toca, <em>ensina.</em></h3>
+                <p>Diretor e coordenador do curso <b>Performance de Bateria</b> do IMA/LCM: Instituto de Música Arcade, em Botucatu, SP, com o Los Angeles College of Music, nos EUA.</p>
+                <p>Antes, deu aula para iniciantes no Instituto de Música Fabiano Manhas. Hoje leva a master class pelas capitais do Brasil.</p>
+              </div>
+            </article>
+
+            <article class="slide slide--contact" aria-label="Slide 6 de 6: Contato">
+              <figure class="slide__photo"><img src="img/leo-hero.jpg" alt="Léo Carvalho sorrindo atrás da bateria" width="1233" height="1225" loading="lazy"></figure>
+              <div class="slide__body">
+                <p class="slide__n">06 · Contato</p>
+                <h3>Bora fazer <em>som junto?</em></h3>
+                <ul class="slide__contact">
+                  <li><span>E-mail</span><a href="mailto:lleobattera@gmail.com">lleobattera@gmail.com</a></li>
+                  <li><span>Telefone</span><a href="https://wa.me/5511993718778?text=Oi%20L%C3%A9o%21%20Vi%20seu%20site%20e%20queria%20conversar%20sobre%20um%20trabalho." target="_blank" rel="noopener">(11) 99371-8778</a></li>
+                  <li><span>Instagram</span><a href="https://www.instagram.com/leocarvvalhobatera/" target="_blank" rel="noopener">@leocarvvalhobatera</a></li>
+                </ul>
+              </div>
+            </article>
+
+          </div>
+          <div class="deck__controls">
+            <button type="button" class="deck__btn deck__btn--prev" aria-label="Slide anterior"><svg><use href="#arrow"/></svg></button>
+            <p class="deck__count"><b data-deck-current>01</b> / 06</p>
+            <div class="deck__dots" role="tablist" aria-label="Escolher slide"></div>
+            <button type="button" class="deck__btn deck__btn--next" aria-label="Próximo slide"><svg><use href="#arrow"/></svg></button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -379,6 +520,6 @@
     </div>
   </footer>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=5" defer></script>
 </body>
 </html>
