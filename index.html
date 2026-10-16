@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
-  <link rel="preload" as="image" href="img/recorte/odery.webp">
-  <link rel="stylesheet" href="styles.css?v=17">
+  <link rel="preload" as="image" href="video/hero-leo.jpg">
+  <link rel="stylesheet" href="styles.css?v=14">
   <script>
     (function () {
       try {
@@ -140,36 +140,26 @@
   </header>
 
   <main>
-    <!-- HERO: recorte do Léo na frente de uma palavra gigante (fixo na rolagem) -->
-    <section class="hero" data-hero aria-label="Apresentação">
-      <div class="hero__stage">
-        <div class="hero__glow" data-glow aria-hidden="true"></div>
-        <div class="hero__rings" aria-hidden="true"><i></i><i></i><i></i></div>
-        <p class="hero__word" data-hero-word aria-hidden="true"><span class="hero__word-in">BATERA</span></p>
-        <figure class="hero__figure" data-hero-fig>
-          <img src="img/recorte/odery.webp" width="1080" height="1493" alt="Léo Carvalho sorrindo e segurando uma caixa Odery azul" fetchpriority="high">
-        </figure>
-        <div class="hero__tag" data-hero-tag>
-          <p class="kicker reveal">Baterista <i></i> São Paulo <span aria-hidden="true">⟷</span> Madrid</p>
-          <h1 class="hero__title">
-            <span class="line"><span>Léo</span></span>
-            <span class="line"><em>Carvalho</em></span>
-          </h1>
-          <div class="hero__ctas reveal">
-            <a class="btn btn--gold" href="https://www.instagram.com/leocarvvalhobatera/" target="_blank" rel="noopener"><svg class="ico"><use href="#ig"/></svg> Dá uma conferida no insta!</a>
-            <a class="btn btn--line" href="https://wa.me/5511993718778?text=Oi%20L%C3%A9o%21%20Vi%20seu%20site%20e%20queria%20conversar%20sobre%20um%20trabalho." target="_blank" rel="noopener"><svg class="ico"><use href="#wpp"/></svg> Chamar no WhatsApp</a>
-          </div>
+    <!-- HERO -->
+    <section class="hero" aria-label="Apresentação">
+      <figure class="hero__photo">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="video/hero-leo.jpg" aria-label="Léo Carvalho tocando bateria ao vivo">
+          <source src="video/hero-leo.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <div class="wrap hero__inner">
+        <p class="kicker reveal">Baterista <i></i> São Paulo <span aria-hidden="true">⟷</span> Madrid</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Léo</span></span>
+          <span class="line"><em>Carvalho</em></span>
+        </h1>
+        <p class="hero__lead reveal">23 anos de bateria, do samba ao rap. Tocou e gravou com <strong>Beth Carvalho</strong>, <strong>Racionais MC's</strong>, <strong>Daniela Mercury</strong>, <strong>Arlindo Cruz</strong> e <strong>Netinho de Paula</strong>, e toca cada show como se fosse o primeiro.</p>
+        <div class="hero__ctas reveal">
+          <a class="btn btn--gold" href="https://www.instagram.com/leocarvvalhobatera/" target="_blank" rel="noopener"><svg class="ico"><use href="#ig"/></svg> Dá uma conferida no insta!</a>
+          <a class="btn btn--line" href="https://wa.me/5511993718778?text=Oi%20L%C3%A9o%21%20Vi%20seu%20site%20e%20queria%20conversar%20sobre%20um%20trabalho." target="_blank" rel="noopener"><svg class="ico"><use href="#wpp"/></svg> Chamar no WhatsApp</a>
         </div>
-        <aside class="hero__side reveal" data-hero-side>
-          <p class="hero__lead">23 anos de bateria, do samba ao rap. Tocou e gravou com <strong>Beth Carvalho</strong>, <strong>Racionais MC's</strong>, <strong>Daniela Mercury</strong>, <strong>Arlindo Cruz</strong> e <strong>Netinho de Paula</strong>.</p>
-          <dl class="hero__creds">
-            <div><dt>Estrada</dt><dd>23 anos</dd></div>
-            <div><dt>Artistas</dt><dd>+80</dd></div>
-            <div><dt>Disco</dt><dd>Samba do meu jeito · 2027</dd></div>
-          </dl>
-        </aside>
-        <p class="hero__sign" aria-hidden="true">Vamo q vamo . . . #GostoAssim</p>
       </div>
+      <p class="hero__sign" aria-hidden="true">Vamo q vamo . . . #GostoAssim</p>
     </section>
 
     <!-- QUEM JÁ DIVIDIU O PALCO -->
@@ -216,34 +206,6 @@
         <div class="stat reveal"><b>+80</b><span>artistas acompanhados e gravados</span></div>
         <div class="stat reveal"><b>+40</b><span>produtores musicais no Brasil e na Europa</span></div>
         <div class="stat reveal"><b>23</b><span>países da Europa com o musical <i>El Viaje de la Vida</i></span></div>
-      </div>
-    </section>
-
-    <!-- DESTAQUES: quatro cenas fixas na rolagem -->
-    <section class="spot" data-spot aria-label="Destaques">
-      <div class="spot__stage">
-        <div class="spot__rings" aria-hidden="true"><i></i><i></i></div>
-        <article class="spot__scene" data-scene aria-label="23 anos de baqueta na mão.">
-          <p class="spot__word" aria-hidden="true">GROOVE</p>
-          <img class="spot__fig spot__fig--vic-firth" src="img/recorte/vic-firth.webp" width="908" height="1360" alt="Léo Carvalho segurando dois pares de baquetas" loading="lazy">
-          <div class="spot__cap"><span class="spot__n">01 / 04</span><h3>23 anos de baqueta na mão.</h3><p>Profissional há 23 anos, do samba ao rap, no palco e no estúdio.</p></div>
-        </article>
-        <article class="spot__scene" data-scene aria-label="Mais de 80 artistas.">
-          <p class="spot__word" aria-hidden="true">PEGADA</p>
-          <img class="spot__fig spot__fig--zildjian" src="img/recorte/zildjian.webp" width="1393" height="956" alt="Léo Carvalho mordendo um prato e segurando outro" loading="lazy">
-          <div class="spot__cap"><span class="spot__n">02 / 04</span><h3>Mais de 80 artistas.</h3><p>Beth Carvalho, Racionais MC's, Daniela Mercury, Arlindo Cruz, Netinho de Paula e muito mais.</p></div>
-        </article>
-        <article class="spot__scene" data-scene aria-label="Acústico e eletrônico.">
-          <p class="spot__word" aria-hidden="true">HÍBRIDO</p>
-          <img class="spot__fig spot__fig--roland" src="img/recorte/roland.webp" width="674" height="1474" alt="Léo Carvalho com um pad de percussão eletrônica no ombro" loading="lazy">
-          <div class="spot__cap"><span class="spot__n">03 / 04</span><h3>Acústico e eletrônico.</h3><p>Set híbrido no palco e bateria gravada em estúdio ou online, pronta pra sua produção.</p></div>
-        </article>
-        <article class="spot__scene" data-scene aria-label="Quem toca, ensina.">
-          <p class="spot__word" aria-hidden="true">ENSINA</p>
-          <img class="spot__fig spot__fig--pad-gorilla" src="img/recorte/pad-gorilla.webp" width="445" height="1258" alt="Léo Carvalho apontando para um pad de estudo" loading="lazy">
-          <div class="spot__cap"><span class="spot__n">04 / 04</span><h3>Quem toca, ensina.</h3><p>Coordenador do curso Performance de Bateria do IMA/LCM e master class pelas capitais do Brasil.</p></div>
-        </article>
-        <div class="spot__bar" aria-hidden="true"><span data-spot-bar></span></div>
       </div>
     </section>
 
@@ -556,11 +518,35 @@
           <article class="card reveal"><span class="card__n">04</span><h3>Workshops e master class</h3><p>“A bateria pop no samba tradicional” para escolas, lojas e eventos, com performance ao vivo e conversa aberta com bateras.</p></article>
         </div>
 
-        <div class="gear reveal">
-          <p class="label">No palco, com o apoio de</p>
-          <ul>
-            <li>Odery Drums</li><li>Zildjian</li><li>Vic Firth</li><li>Aquarian</li><li>Roland</li><li>Pad Gorilla</li><li>Xtreme Ears</li><li>Izzo Musical</li>
-          </ul>
+        <div class="partners">
+          <header class="section-head reveal">
+            <p class="label">Parceiros</p>
+            <h2>As marcas <em>que tocam junto.</em></h2>
+            <p>No palco e no estúdio, com o apoio das melhores marcas do cenário baterístico mundial.</p>
+          </header>
+          <div class="partners__grid">
+            <figure class="partner partner--tall reveal">
+              <img src="img/destaque/odery.jpg" alt="Léo Carvalho segurando uma caixa Odery azul" width="1330" height="1600" loading="lazy">
+              <figcaption><a href="https://www.instagram.com/oderydrumsbrazil/" target="_blank" rel="noopener"><b>Odery</b></a><span>Bateria e caixa</span></figcaption>
+            </figure>
+            <figure class="partner partner--wide reveal">
+              <img src="img/destaque/zildjian.jpg" alt="Léo Carvalho mordendo um prato Zildjian e segurando um China Oriental" width="1426" height="1103" loading="lazy">
+              <figcaption><a href="https://www.instagram.com/zildjiancompany/" target="_blank" rel="noopener"><b>Zildjian</b></a><span>Pratos</span></figcaption>
+            </figure>
+            <figure class="partner partner--tall reveal">
+              <img src="img/destaque/roland.jpg" alt="Léo Carvalho com um pad Roland no ombro" width="900" height="1510" loading="lazy">
+              <figcaption><a href="https://www.instagram.com/roland_brasil/" target="_blank" rel="noopener"><b>Roland</b></a><span>Percussão eletrônica</span></figcaption>
+            </figure>
+            <figure class="partner reveal">
+              <img src="img/destaque/vic-firth.jpg" alt="Léo Carvalho segurando dois pares de baquetas Vic Firth" width="1070" height="1510" loading="lazy">
+              <figcaption><a href="https://www.instagram.com/vicfirth/" target="_blank" rel="noopener"><b>Vic Firth</b></a><span>Baquetas</span></figcaption>
+            </figure>
+            <figure class="partner reveal">
+              <img src="img/destaque/pad-gorilla.jpg" alt="Léo Carvalho apontando para um pad de estudo Pad Gorilla" width="1070" height="1510" loading="lazy">
+              <figcaption><a href="https://www.instagram.com/padgorilla/" target="_blank" rel="noopener"><b>Pad Gorilla</b></a><span>Pad de estudo</span></figcaption>
+            </figure>
+          </div>
+          <p class="partners__more reveal">E também <a href="https://www.instagram.com/aquariandrumheads/" target="_blank" rel="noopener">Aquarian</a> · <a href="https://www.instagram.com/xtremeears/" target="_blank" rel="noopener">Xtreme Ears</a> · <a href="https://www.instagram.com/izzo.musical/" target="_blank" rel="noopener">Izzo Musical</a></p>
         </div>
       </div>
     </section>
@@ -596,6 +582,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=17" defer></script>
+  <script src="main.js?v=13" defer></script>
 </body>
 </html>

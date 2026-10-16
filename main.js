@@ -124,77 +124,9 @@
     toggle.setAttribute('aria-expanded', false);
   }));
 
-  // hero e destaques: rolagem controla as cenas (um só rAF), mouse dá profundidade
-  const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
-  const ease = t => t * t * (3 - 2 * t);
-  const hero = document.querySelector('[data-hero]');
-  const hStage = hero.querySelector('.hero__stage');
-  const hWord = hero.querySelector('.hero__word-in');
-  const hWordBox = hero.querySelector('[data-hero-word]');
-  const hFig = hero.querySelector('[data-hero-fig]');
-  const hTag = hero.querySelector('[data-hero-tag]');
-  const hSide = hero.querySelector('[data-hero-side]');
-  const glow = hero.querySelector('[data-glow]');
-  const spot = document.querySelector('[data-spot]');
-  const scenes = [...spot.querySelectorAll('[data-scene]')];
-  const bar = spot.querySelector('[data-spot-bar]');
-  const mouse = { x: 0, y: 0, cx: 0, cy: 0 };
-  let ticking = false;
-
-  const render = () => {
-    ticking = false;
-    const vh = innerHeight;
-    // hero: a palavra corre, o Léo recua, os textos sobem e somem
-    const hr = hero.getBoundingClientRect();
-    const hp = clamp(-hr.top / vh, 0, 1);
-    mouse.cx += (mouse.x - mouse.cx) * .08;
-    mouse.cy += (mouse.y - mouse.cy) * .08;
-    hWord.style.transform = `translateX(${-hp * 34}%)`;
-    hWordBox.style.transform = `translate(${mouse.cx * -50}px, ${mouse.cy * -20}px)`;
-    hFig.style.transform = `translateX(calc(-50% + ${mouse.cx * 22}px)) translateY(${hp * 4}%) scale(${1 - hp * .14})`;
-    const fade = clamp(hp / .55, 0, 1);
-    hTag.style.transform = `translateY(${-fade * 90}px)`;
-    hTag.style.opacity = 1 - fade;
-    if (hSide) { hSide.style.transform = `translateY(${-fade * 60}px)`; hSide.style.opacity = 1 - clamp(hp / .45, 0, 1); }
-    // o palco recua quando a próxima seção sobe por cima
-    const out = clamp((-hr.top - (hero.offsetHeight - vh)) / vh, 0, 1);
-    hStage.style.transform = `scale(${1 - out * .08})`;
-    hStage.style.filter = out ? `brightness(${1 - out * .55})` : '';
-    hStage.style.borderRadius = `${out * 28}px`;
-
-    // destaques: cada cena ocupa uma tela de rolagem
-    const sr = spot.getBoundingClientRect();
-    const total = spot.offsetHeight - vh;
-    const sp = clamp(-sr.top / total, 0, 1) * scenes.length;
-    scenes.forEach((sc, i) => {
-      let t = sp - i - .5;                     // -0.5..0.5 enquanto a cena é a principal
-      if (i === 0) t = Math.max(t, 0);         // a primeira já entra pronta
-      if (i === scenes.length - 1) t = Math.min(t, 0); // a última fica até o fim
-      const vis = 1 - clamp((Math.abs(t) - .4) / .1, 0, 1);
-      sc.style.opacity = vis.toFixed(3);
-      sc.style.visibility = vis > 0 ? 'visible' : 'hidden';
-      const w = sc.querySelector('.spot__word'), f = sc.querySelector('.spot__fig'), c = sc.querySelector('.spot__cap');
-      w.style.transform = `translateY(-62%) translateX(calc(${-t * 46}% + ${mouse.cx * -30}px))`;
-      f.style.transform = `translateX(calc(-50% + var(--fx) + ${t * -16}vw + ${mouse.cx * 16}px)) translateY(${Math.abs(t) * 10}%) scale(${.92 + .08 * ease(1 - clamp(Math.abs(t) * 2, 0, 1))})`;
-      c.style.transform = `translateY(${t * 60}px)`;
-    });
-    bar.style.transform = `scaleX(${clamp(sp / scenes.length, 0, 1)})`;
-
-    if (Math.abs(mouse.x - mouse.cx) > .001 || Math.abs(mouse.y - mouse.cy) > .001) requestTick();
-  };
-  const requestTick = () => { if (!ticking) { ticking = true; requestAnimationFrame(render); } };
-  addEventListener('scroll', requestTick, { passive: true });
-  addEventListener('resize', requestTick);
-  if (!reduce && matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    addEventListener('pointermove', e => {
-      mouse.x = e.clientX / innerWidth - .5;
-      mouse.y = e.clientY / innerHeight - .5;
-      glow.style.setProperty('--gx', (e.clientX / innerWidth * 100).toFixed(1) + '%');
-      glow.style.setProperty('--gy', (e.clientY / innerHeight * 100).toFixed(1) + '%');
-      requestTick();
-    }, { passive: true });
-  }
-  render();
+  // hero: o vídeo fica parado (no poster) para quem prefere menos movimento
+  const heroVideo = document.querySelector('.hero__video');
+  if (heroVideo && reduce) { heroVideo.removeAttribute('autoplay'); heroVideo.pause(); }
 
   // revelar no scroll
   const io = new IntersectionObserver(entries => {
