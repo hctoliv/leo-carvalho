@@ -4,6 +4,16 @@
   const toggle = document.querySelector('.nav__toggle');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // sem zoom no celular: o Safari ignora user-scalable=no, então bloqueia pinça e toque duplo
+  ['gesturestart', 'gesturechange', 'gestureend'].forEach(ev => document.addEventListener(ev, e => e.preventDefault(), { passive: false }));
+  document.addEventListener('touchmove', e => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+  let lastTap = 0;
+  document.addEventListener('touchend', e => {
+    const now = Date.now();
+    if (now - lastTap < 300 && !e.target.closest('a, button, video')) e.preventDefault();
+    lastTap = now;
+  }, { passive: false });
+
   // intro: contagem 1-2-3-4, groove na caixa, prato de ataque e mergulho na pele
   const root = document.documentElement;
   const intro = document.querySelector('div.intro');
