@@ -100,6 +100,7 @@ strong { font-weight: 700; color: #fff; }
 .hero__photo {
   position: absolute; z-index: -1; margin: 0;
   top: 0; right: 0; bottom: 0; width: min(64vw, 1100px);
+  overflow: hidden; /* o zoom de entrada não vaza para fora da moldura */
 }
 .hero__photo img, .hero__video {
   width: 100%; height: 100%; object-fit: cover; object-position: 70% 40%;
@@ -113,7 +114,7 @@ strong { font-weight: 700; color: #fff; }
     linear-gradient(0deg, var(--ink) 0%, rgba(13, 11, 10, 0) 40%),
     linear-gradient(180deg, rgba(13, 11, 10, .6) 0%, rgba(13, 11, 10, 0) 25%);
 }
-@keyframes heroIn { from { transform: scale(1.12); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@keyframes heroIn { from { transform: scale(1.06); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
 .kicker {
   display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
