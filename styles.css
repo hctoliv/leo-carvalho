@@ -493,6 +493,35 @@ strong { font-weight: 700; color: #fff; }
 .slide__tile--dark { background: var(--ink); color: var(--gold); border: 1px solid var(--line); }
 .slide__photo img[src*="palco-sorriso"] { object-position: 55% 35%; }
 
+/* ---------- parceiros (fotos de estúdio) ---------- */
+.partners { margin-top: clamp(80px, 10vw, 130px); }
+.partners__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: clamp(220px, 22vw, 330px); gap: clamp(10px, 1.4vw, 18px); grid-auto-flow: dense; }
+.partner { margin: 0; position: relative; overflow: hidden; background: #d9d9d9; min-height: 0; }
+.partner--tall { grid-row: span 2; }
+.partner--wide { grid-column: span 2; }
+.partner img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.partner:hover img { transform: scale(1.03); }
+.partner--wide img { object-position: 50% 30%; }
+.partner img[src*="odery"] { object-position: 72% 40%; }
+.partner img[src*="pad-gorilla"] { object-position: 50% 25%; }
+.partner figcaption { position: absolute; left: 12px; bottom: 12px; display: grid; gap: 2px; padding: 10px 14px; background: var(--ink); color: var(--bone); }
+.partner figcaption a { text-decoration: none; color: inherit; }
+.partner figcaption b { font: 600 18px/1.1 var(--ff-display); letter-spacing: -.02em; }
+.partner figcaption a:hover b { color: var(--gold-hi); }
+.partner figcaption span { font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.partners__more { margin: 28px 0 0; font-size: 15px; color: #5d544a; }
+.partners__more a { color: var(--ink); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(13, 11, 10, .25); }
+.partners__more a:hover { border-color: var(--terra); color: var(--terra); }
+.slide__photo img[src*="destaque/"] { object-position: 50% 30%; }
+@media (max-width: 860px) {
+  .partners__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(200px, 50vw, 360px); }
+}
+@media (max-width: 560px) {
+  .partners__grid { grid-auto-rows: 62vw; gap: 8px; }
+  .partner figcaption { left: 8px; bottom: 8px; padding: 8px 10px; }
+  .partner figcaption b { font-size: 15px; }
+}
+
 /* ---------- revelar no scroll ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }
