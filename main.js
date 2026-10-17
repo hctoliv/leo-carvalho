@@ -293,3 +293,13 @@
 
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 })();
+
+// clipe do YouTube: troca a capa pelo player só no clique
+document.querySelectorAll('[data-yt]').forEach(btn => btn.addEventListener('click', () => {
+  const f = document.createElement('iframe');
+  f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0`;
+  f.title = btn.getAttribute('aria-label');
+  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+  f.allowFullscreen = true;
+  btn.replaceWith(f);
+}));
