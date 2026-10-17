@@ -8,13 +8,13 @@
   <meta name="theme-color" content="#0d0b0a">
   <meta property="og:title" content="Léo Carvalho · Baterista">
   <meta property="og:description" content="23 anos de bateria, mais de 80 artistas, do samba ao rap. Shows, gravações e master class.">
-  <meta property="og:image" content="https://hctoliv.github.io/leo-carvalho/img/destaque/zildjian.jpg">
+  <meta property="og:image" content="https://hctoliv.github.io/leo-carvalho/img/vermelho/abertura.jpg">
   <meta property="og:url" content="https://hctoliv.github.io/leo-carvalho/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
-  <link rel="preload" as="image" href="video/hero-leo.jpg">
-  <link rel="stylesheet" href="styles.css?v=24">
+  <link rel="preload" as="image" href="img/vermelho/abertura.jpg">
+  <link rel="stylesheet" href="styles.css?v=30">
   <script>
     (function () {
       try {
@@ -33,7 +33,7 @@
     "@type": "Person",
     "name": "Léo Carvalho",
     "jobTitle": "Baterista",
-    "image": "img/leo-hero.jpg",
+    "image": "img/vermelho/abertura.jpg",
     "homeLocation": [{"@type": "Place", "name": "São Paulo"}, {"@type": "Place", "name": "Madrid"}],
     "email": "mailto:lleobattera@gmail.com",
     "telephone": "+55 11 99371-8778",
@@ -102,8 +102,8 @@
               <stop offset="1" stop-color="#110e0c"/>
             </radialGradient>
           </defs>
-          <g class="intro__lugs" fill="#c9a14a"><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(0 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(36 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(72 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(108 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(144 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(180 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(216 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(252 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(288 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(324 100 100)"/></g>
-          <circle cx="100" cy="100" r="91" fill="none" stroke="#c9a14a" stroke-width="4"/>
+          <g class="intro__lugs" fill="#e3192c"><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(0 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(36 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(72 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(108 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(144 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(180 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(216 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(252 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(288 100 100)"/><rect x="97" y="1" width="6" height="12" rx="2" transform="rotate(324 100 100)"/></g>
+          <circle cx="100" cy="100" r="91" fill="none" stroke="#e3192c" stroke-width="4"/>
           <circle class="intro__head" cx="100" cy="100" r="86" fill="url(#pele)"/>
           <circle cx="100" cy="100" r="86" fill="none" stroke="rgba(242,235,223,.08)" stroke-width="1"/>
           <use href="#sankofa" x="76" y="76" width="48" height="48" class="intro__mark"/>
@@ -127,7 +127,7 @@
         <span>Léo Carvalho</span>
       </a>
       <nav class="nav__links" id="menu" aria-label="Principal">
-        <a href="#historia">História</a>
+        <a href="#historia">Quem eu sou</a>
         <a href="#videos">Vídeos</a>
         <a href="#fotos">Fotos</a>
         <a href="#artistas">Artistas</a>
@@ -143,9 +143,7 @@
     <!-- HERO -->
     <section class="hero" aria-label="Apresentação">
       <figure class="hero__photo">
-        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="video/hero-leo.jpg" aria-label="Léo Carvalho tocando bateria ao vivo">
-          <source src="video/hero-leo.mp4" type="video/mp4">
-        </video>
+        <img class="hero__img" src="img/vermelho/abertura.jpg" alt="Léo Carvalho na bateria, de braços abertos com as baquetas Vic Firth, sob luz vermelha" width="1600" height="1067" fetchpriority="high">
       </figure>
       <div class="wrap hero__inner">
         <p class="kicker reveal">Baterista <i></i> São Paulo <span aria-hidden="true">⟷</span> Madrid</p>
@@ -183,10 +181,14 @@
             <p>“Respeite o seu corre. <em>Respeite a sua história.”</em></p>
           </blockquote>
           <p class="story__adinkra"><b>Sankofa</b> · símbolo adinkra: voltar e buscar o que ficou para trás. Ninguém chega longe esquecendo de onde veio.</p>
-          <figure class="story__portrait reveal"><img src="img/destaque/bracos-cruzados.jpg" alt="Léo Carvalho sorrindo de braços cruzados" width="1070" height="1500" loading="lazy"></figure>
+          <figure class="story__video reveal">
+            <video muted loop playsinline autoplay preload="metadata" poster="video/hero-leo.jpg" aria-label="Léo Carvalho tocando bateria ao vivo">
+              <source src="video/hero-leo.mp4" type="video/mp4">
+            </video>
+          </figure>
         </div>
         <div class="story__text reveal">
-          <p class="label">A história</p>
+          <p class="label">Quem eu sou</p>
           <h2>Aos 14 anos, era <em>só um sonho.</em></h2>
           <p>E ele sabia que ia correr atrás dele sozinho. Pedia a Deus só saúde, porque as oportunidades ele faria acontecer, e as que chegassem ele não ia deixar passar.</p>
           <p>No caminho apareceu <a class="inline-ig" href="https://www.instagram.com/paulinhooliveiramusic/" target="_blank" rel="noopener"><strong>Paulinho Oliveira</strong></a>, que acreditou quando ainda não tinha nada pra acreditar e ajudou o Léo a dar os primeiros passos na música. O caminho foi árduo. Valeu cada baqueta quebrada.</p>
@@ -214,7 +216,7 @@
     <section class="leo" id="leo" aria-label="Léo Carvalho">
       <div class="wrap">
         <article class="leo__row">
-          <figure class="leo__photo reveal"><img src="img/destaque/vic-firth.jpg" alt="Léo Carvalho gritando e segurando dois pares de baquetas Vic Firth" width="1070" height="1510" loading="lazy"></figure>
+          <figure class="leo__photo reveal"><img src="img/vermelho/rutes.jpg" alt="Léo Carvalho sorrindo na bateria com as baquetas Rute Vic Firth, sob luz vermelha" width="1600" height="1600" loading="lazy"></figure>
           <div class="leo__text reveal">
             <p class="label">Groove</p>
             <h2>23 anos de <em>baqueta na mão.</em></h2>
@@ -222,7 +224,7 @@
           </div>
         </article>
         <article class="leo__row leo__row--wide leo__row--flip">
-          <figure class="leo__photo reveal"><img src="img/destaque/zildjian.jpg" alt="Léo Carvalho mordendo um prato Zildjian e segurando um China Oriental" width="1426" height="1103" loading="lazy"></figure>
+          <figure class="leo__photo reveal"><img src="img/vermelho/prato.jpg" alt="Léo Carvalho olhando para o prato Zildjian com vassourinha na mão, sob luz vermelha" width="1600" height="1067" loading="lazy"></figure>
           <div class="leo__text reveal">
             <p class="label">Pegada</p>
             <h2>Mais de <em>80 artistas.</em></h2>
@@ -230,7 +232,7 @@
           </div>
         </article>
         <article class="leo__row">
-          <figure class="leo__photo reveal"><img src="img/destaque/roland.jpg" alt="Léo Carvalho sorrindo com um pad Roland no ombro" width="900" height="1510" loading="lazy"></figure>
+          <figure class="leo__photo reveal"><img src="img/vermelho/cinza-vermelho.jpg" alt="Léo Carvalho tocando prato com vassourinha, sob luz vermelha" width="1600" height="1600" loading="lazy"></figure>
           <div class="leo__text reveal">
             <p class="label">Híbrido</p>
             <h2>Acústico <em>e eletrônico.</em></h2>
@@ -319,7 +321,7 @@
           <figure class="gallery__item gallery__item--wide reveal"><button type="button" class="gallery__open" data-full="img/fotos/palco-sorriso.jpg" aria-label="Ampliar foto: Samba da Ladeira · Tour acústico, São Carlos–SP"><img src="img/fotos/palco-sorriso.jpg" alt="Léo Carvalho sorrindo atrás da bateria Odery, no palco" width="1233" height="1225" loading="lazy"></button><figcaption>Samba da Ladeira · Tour acústico, São Carlos–SP</figcaption></figure>
           <figure class="gallery__item gallery__item--tall reveal"><button type="button" class="gallery__open" data-full="img/fotos/palco-samba90-cor.jpg" aria-label="Ampliar foto: Palco Samba 90 · Samba Recife"><img src="img/fotos/palco-samba90-cor.jpg" alt="Léo Carvalho no Palco Samba 90 do Samba Recife" width="1242" height="1656" loading="lazy"></button><figcaption>Palco Samba 90 · Samba Recife</figcaption></figure>
           <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-close.jpg" aria-label="Ampliar foto: Izzy Gordon · Concha Acústica, Salto–SP"><img src="img/fotos/izzy-close.jpg" alt="Léo Carvalho tocando na bateria Odery, de boina branca" width="1400" height="1866" loading="lazy"></button><figcaption>Izzy Gordon · Concha Acústica, Salto–SP</figcaption></figure>
-          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/kit-odery.jpg" aria-label="Ampliar foto: Tour Sementes da Tamarineira"><img src="img/fotos/kit-odery.jpg" alt="Léo Carvalho atrás do kit Odery com peles Aquarian" width="1024" height="1365" loading="lazy"></button><figcaption>Tour Sementes da Tamarineira</figcaption></figure>
+          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/kit-odery.jpg" aria-label="Ampliar foto: Tour Sementes da Tamarineira"><img src="img/vermelho/odery-sorriso.jpg" alt="Léo Carvalho sorrindo atrás da bateria Odery" width="1600" height="1600" loading="lazy"></button><figcaption>Tour Sementes da Tamarineira</figcaption></figure>
           <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-duo.jpg" aria-label="Ampliar foto: Com Izzy Gordon"><img src="img/fotos/izzy-duo.jpg" alt="Izzy Gordon e Léo Carvalho no palco" width="1024" height="1365" loading="lazy"></button><figcaption>Com Izzy Gordon</figcaption></figure>
           <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-palco.jpg" aria-label="Ampliar foto: Izzy Gordon canta Jorge Aragão"><img src="img/fotos/izzy-palco.jpg" alt="Izzy Gordon cantando com Léo Carvalho na bateria ao fundo" width="1024" height="1365" loading="lazy"></button><figcaption>Izzy Gordon canta Jorge Aragão</figcaption></figure>
         </div>
@@ -341,7 +343,7 @@
             <h2>Do samba ao rap, <em>do rock ao gospel.</em></h2>
             <p>Mais de 80 artistas acompanhados ao vivo e em estúdio. A versatilidade de quem se adapta a cada estilo e soma em cada projeto.</p>
           </div>
-          <figure class="shead__photo reveal"><img src="img/destaque/dedo-pra-cima.jpg" alt="Léo Carvalho de camiseta vermelha, sorrindo e apontando para cima" width="1066" height="1600" loading="lazy"></figure>
+          <figure class="shead__photo reveal"><img src="img/vermelho/risada.jpg" alt="Léo Carvalho rindo atrás da bateria vermelha" width="1600" height="1600" loading="lazy"></figure>
         </header>
         <ul class="artists__top"><li class="reveal"><b><a href="https://www.instagram.com/bethcarvalhooficial/" target="_blank" rel="noopener" title="@bethcarvalhooficial no Instagram">Beth Carvalho</a></b><span>a Madrinha do Samba</span></li><li class="reveal"><b><a href="https://www.instagram.com/racionaiscn/" target="_blank" rel="noopener" title="@racionaiscn no Instagram">Racionais MC's</a></b><span>o rap que mudou o Brasil</span></li><li class="reveal"><b><a href="https://www.instagram.com/danielamercury/" target="_blank" rel="noopener" title="@danielamercury no Instagram">Daniela Mercury</a></b><span>a rainha do axé</span></li><li class="reveal"><b><a href="https://www.instagram.com/emicida/" target="_blank" rel="noopener" title="@emicida no Instagram">Emicida</a></b><span>rap, palavra e cultura</span></li><li class="reveal"><b><a href="https://www.instagram.com/ellenoleria/" target="_blank" rel="noopener" title="@ellenoleria no Instagram">Ellen Oléria</a></b><span>voz potente da música brasileira</span></li><li class="reveal"><b><a href="https://www.instagram.com/exaltaoficial/" target="_blank" rel="noopener" title="@exaltaoficial no Instagram">Exaltasamba</a></b><span>pagode que embalou gerações</span></li><li class="reveal"><b><a href="https://www.instagram.com/izzygordon/" target="_blank" rel="noopener" title="@izzygordon no Instagram">Izzy Gordon</a></b><span>jazz e MPB</span></li><li class="reveal"><b><a href="https://www.instagram.com/arlindocruzobem/" target="_blank" rel="noopener" title="@arlindocruzobem no Instagram">Arlindo Cruz</a></b><span>samba de raiz e de partido</span></li><li class="reveal"><b><a href="https://www.instagram.com/mslaurynhill/" target="_blank" rel="noopener" title="@mslaurynhill no Instagram">Lauryn Hill</a></b><span>soul e hip-hop mundial</span></li></ul>
         <div class="artists__all reveal">
@@ -427,7 +429,7 @@
           <div class="deck__track" tabindex="0" aria-live="polite">
 
             <article class="slide slide--cover" aria-label="Slide 1 de 6: Capa">
-              <figure class="slide__photo"><img src="img/destaque/odery.jpg" alt="Léo Carvalho segurando uma caixa Odery" width="1330" height="1600" loading="lazy"></figure>
+              <figure class="slide__photo"><img src="img/vermelho/abertura.jpg" alt="Léo Carvalho na bateria sob luz vermelha" width="1600" height="1067" loading="lazy"></figure>
               <div class="slide__body">
                 <p class="slide__n">01 · Capa</p>
                 <h3>Léo Carvalho<br><em>Baterista profissional</em></h3>
@@ -437,7 +439,7 @@
             </article>
 
             <article class="slide" aria-label="Slide 2 de 6: Biografia">
-              <figure class="slide__photo"><img src="img/destaque/roland.jpg" alt="Léo Carvalho sorrindo, em retrato de estúdio" width="900" height="1510" loading="lazy"></figure>
+              <figure class="slide__photo"><img src="img/vermelho/risada.jpg" alt="Léo Carvalho rindo atrás da bateria" width="1600" height="1600" loading="lazy"></figure>
               <div class="slide__body">
                 <p class="slide__n">02 · Biografia</p>
                 <h3>Formação de <em>mestre.</em></h3>
@@ -485,7 +487,7 @@
             </article>
 
             <article class="slide slide--contact" aria-label="Slide 6 de 6: Contato">
-              <figure class="slide__photo"><img src="img/destaque/vic-firth.jpg" alt="Léo Carvalho com baquetas Vic Firth" width="1070" height="1510" loading="lazy"></figure>
+              <figure class="slide__photo"><img src="img/vermelho/rutes.jpg" alt="Léo Carvalho com as baquetas Rute" width="1600" height="1600" loading="lazy"></figure>
               <div class="slide__body">
                 <p class="slide__n">06 · Contato</p>
                 <h3>Bora fazer <em>som junto?</em></h3>
@@ -517,7 +519,7 @@
             <h2>O que vem <em>por aí.</em></h2>
             <p>Disco novo, master class na estrada e a coordenação de um curso de performance.</p>
           </div>
-          <figure class="shead__photo reveal"><img src="img/destaque/caixa-no-alto.jpg" alt="Léo Carvalho erguendo uma caixa Odery acima da cabeça" width="1068" height="1600" loading="lazy"></figure>
+          <figure class="shead__photo reveal"><img src="img/vermelho/vassourinhas.jpg" alt="Léo Carvalho tocando com vassourinhas, olhando para os pratos" width="1600" height="1600" loading="lazy"></figure>
         </header>
         <div class="now__grid">
           <article class="now__item now__item--album reveal">
@@ -550,7 +552,7 @@
             <h2>Do palco <em>ao estúdio.</em></h2>
             <p>Atende em português e espanhol, entre São Paulo e Madrid.</p>
           </div>
-          <figure class="shead__photo reveal"><img src="img/destaque/caixa-vermelha.jpg" alt="Léo Carvalho rindo e apontando para uma caixa vermelha" width="1600" height="930" loading="lazy"></figure>
+          <figure class="shead__photo reveal"><img src="img/vermelho/fundo-preto.jpg" alt="Léo Carvalho tocando bateria com fundo preto" width="1600" height="1067" loading="lazy"></figure>
         </header>
         <div class="cards">
           <article class="card reveal"><span class="card__n">01</span><h3>Shows e turnês</h3><p>Baterista para artistas, grupos e festivais. Samba, pagode e música do mundo, com leitura de repertório e pegada de palco.</p></article>
@@ -559,35 +561,11 @@
           <article class="card reveal"><span class="card__n">04</span><h3>Workshops e master class</h3><p>“A bateria pop no samba tradicional” para escolas, lojas e eventos, com performance ao vivo e conversa aberta com bateras.</p></article>
         </div>
 
-        <div class="partners">
-          <header class="section-head reveal">
-            <p class="label">Parceiros</p>
-            <h2>As marcas <em>que tocam junto.</em></h2>
-            <p>No palco e no estúdio, com o apoio das melhores marcas do cenário baterístico mundial.</p>
-          </header>
-          <div class="partners__grid">
-            <figure class="partner partner--tall reveal">
-              <img src="img/destaque/odery.jpg" alt="Léo Carvalho segurando uma caixa Odery azul" width="1330" height="1600" loading="lazy">
-              <figcaption><a href="https://www.instagram.com/oderydrumsbrazil/" target="_blank" rel="noopener"><b>Odery</b></a><span>Bateria e caixa</span></figcaption>
-            </figure>
-            <figure class="partner partner--wide reveal">
-              <img src="img/destaque/zildjian.jpg" alt="Léo Carvalho mordendo um prato Zildjian e segurando um China Oriental" width="1426" height="1103" loading="lazy">
-              <figcaption><a href="https://www.instagram.com/zildjiancompany/" target="_blank" rel="noopener"><b>Zildjian</b></a><span>Pratos</span></figcaption>
-            </figure>
-            <figure class="partner partner--tall reveal">
-              <img src="img/destaque/roland.jpg" alt="Léo Carvalho com um pad Roland no ombro" width="900" height="1510" loading="lazy">
-              <figcaption><a href="https://www.instagram.com/roland_brasil/" target="_blank" rel="noopener"><b>Roland</b></a><span>Percussão eletrônica</span></figcaption>
-            </figure>
-            <figure class="partner reveal">
-              <img src="img/destaque/vic-firth.jpg" alt="Léo Carvalho segurando dois pares de baquetas Vic Firth" width="1070" height="1510" loading="lazy">
-              <figcaption><a href="https://www.instagram.com/vicfirth/" target="_blank" rel="noopener"><b>Vic Firth</b></a><span>Baquetas</span></figcaption>
-            </figure>
-            <figure class="partner reveal">
-              <img src="img/destaque/pad-gorilla.jpg" alt="Léo Carvalho apontando para um pad de estudo Pad Gorilla" width="1070" height="1510" loading="lazy">
-              <figcaption><a href="https://www.instagram.com/padgorilla/" target="_blank" rel="noopener"><b>Pad Gorilla</b></a><span>Pad de estudo</span></figcaption>
-            </figure>
-          </div>
-          <p class="partners__more reveal">E também <a href="https://www.instagram.com/aquariandrumheads/" target="_blank" rel="noopener">Aquarian</a> · <a href="https://www.instagram.com/xtremeears/" target="_blank" rel="noopener">Xtreme Ears</a> · <a href="https://www.instagram.com/izzo.musical/" target="_blank" rel="noopener">Izzo Musical</a></p>
+        <div class="gear reveal">
+          <p class="label">No palco, com o apoio de</p>
+          <ul>
+            <li>Odery Drums</li><li>Zildjian</li><li>Vic Firth</li><li>Aquarian</li><li>Roland</li><li>Pad Gorilla</li><li>Xtreme Ears</li><li>Izzo Musical</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -595,7 +573,7 @@
     <!-- CONTATO -->
     <section class="contact" id="contato">
       <div class="wrap contact__split">
-      <figure class="contact__photo reveal"><img src="img/destaque/apontando.jpg" alt="Léo Carvalho sorrindo e apontando para quem está vendo" width="1070" height="1500" loading="lazy"></figure>
+      <figure class="contact__photo reveal"><img src="img/vermelho/odery-kit.jpg" alt="Léo Carvalho tocando bateria Odery com camisa de estampa africana" width="1600" height="1600" loading="lazy"></figure>
       <div class="contact__inner reveal">
         <svg class="contact__mark" aria-hidden="true"><use href="#sankofa"/></svg>
         <p class="label">Contato</p>
@@ -625,6 +603,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=13" defer></script>
+  <script src="main.js?v=30" defer></script>
 </body>
 </html>
