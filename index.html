@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
   <link rel="preload" as="image" href="img/vermelho/abertura.jpg">
-  <link rel="stylesheet" href="styles.css?v=34">
+  <link rel="stylesheet" href="styles.css?v=36">
   <script>
     (function () {
       try {
@@ -129,7 +129,7 @@
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#historia">Quem eu sou</a>
         <a href="#videos">Vídeos</a>
-        <a href="#fotos">Fotos</a>
+        <a href="#clipes">Clipes</a>
         <a href="#artistas">Artistas</a>
         <a href="#apresentacao">Apresentação</a>
         <a href="#contato">Contato</a>
@@ -309,29 +309,44 @@
       </div>
     </section>
 
-    <!-- FOTOS -->
-    <section class="gallery" id="fotos">
+    <!-- CLIPES -->
+    <section class="clipes" id="clipes">
       <div class="wrap">
         <header class="section-head reveal">
-          <p class="label">Fotos</p>
-          <h2>De perto, <em>no palco.</em></h2>
-          <p>Registros profissionais dos shows. Toque numa foto para ampliar.</p>
+          <p class="label">Clipes</p>
+          <h2>Dá o <em>play.</em></h2>
+          <p>Léo Carvalho na bateria, com Netinho de Paula, Ellen Oléria e o Quinteto em Branco e Preto.</p>
         </header>
-        <div class="gallery__grid">
-          <figure class="gallery__item gallery__item--big reveal"><button type="button" class="gallery__open" data-full="img/fotos/obrigado-samba.jpg" aria-label="Ampliar foto: “Obrigado, Samba!” · 2026"><img src="img/fotos/obrigado-samba.jpg" alt="Léo Carvalho na bateria, de boné, sob luz azul" width="1200" height="1600" loading="lazy"></button><figcaption>“Obrigado, Samba!” · 2026</figcaption></figure>
-          <figure class="gallery__item gallery__item--wide reveal"><button type="button" class="gallery__open" data-full="img/fotos/palco-sorriso.jpg" aria-label="Ampliar foto: Samba da Ladeira · Tour acústico, São Carlos–SP"><img src="img/fotos/palco-sorriso.jpg" alt="Léo Carvalho sorrindo atrás da bateria Odery, no palco" width="1233" height="1225" loading="lazy"></button><figcaption>Samba da Ladeira · Tour acústico, São Carlos–SP</figcaption></figure>
-          <figure class="gallery__item gallery__item--tall reveal"><button type="button" class="gallery__open" data-full="img/fotos/palco-samba90-cor.jpg" aria-label="Ampliar foto: Palco Samba 90 · Samba Recife"><img src="img/fotos/palco-samba90-cor.jpg" alt="Léo Carvalho no Palco Samba 90 do Samba Recife" width="1242" height="1656" loading="lazy"></button><figcaption>Palco Samba 90 · Samba Recife</figcaption></figure>
-          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-close.jpg" aria-label="Ampliar foto: Izzy Gordon · Concha Acústica, Salto–SP"><img src="img/fotos/izzy-close.jpg" alt="Léo Carvalho tocando na bateria Odery, de boina branca" width="1400" height="1866" loading="lazy"></button><figcaption>Izzy Gordon · Concha Acústica, Salto–SP</figcaption></figure>
-          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/kit-odery.jpg" aria-label="Ampliar foto: Tour Sementes da Tamarineira"><img src="img/vermelho/odery-sorriso.jpg" alt="Léo Carvalho sorrindo atrás da bateria Odery" width="1600" height="1600" loading="lazy"></button><figcaption>Tour Sementes da Tamarineira</figcaption></figure>
-          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-duo.jpg" aria-label="Ampliar foto: Com Izzy Gordon"><img src="img/fotos/izzy-duo.jpg" alt="Izzy Gordon e Léo Carvalho no palco" width="1024" height="1365" loading="lazy"></button><figcaption>Com Izzy Gordon</figcaption></figure>
-          <figure class="gallery__item reveal"><button type="button" class="gallery__open" data-full="img/fotos/izzy-palco.jpg" aria-label="Ampliar foto: Izzy Gordon canta Jorge Aragão"><img src="img/fotos/izzy-palco.jpg" alt="Izzy Gordon cantando com Léo Carvalho na bateria ao fundo" width="1024" height="1365" loading="lazy"></button><figcaption>Izzy Gordon canta Jorge Aragão</figcaption></figure>
+        <div class="clipes__grid">
+          <figure class="yt reveal">
+            <button type="button" class="yt__play" data-yt="2uPb0ftkHtM" aria-label="Assistir: Netinho de Paula, Desengano / Coração Aberto">
+              <img src="img/clipe-netinho.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+            </button>
+            <figcaption><span class="yt__artist">Netinho de Paula</span><b>Desengano / Coração Aberto</b></figcaption>
+          </figure>
+          <figure class="yt reveal">
+            <button type="button" class="yt__play" data-yt="OAkmI6yg-4M" aria-label="Assistir: Netinho de Paula, Cohab City / Vem Pra Cá">
+              <img src="img/clipe-netinho-2.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+            </button>
+            <figcaption><span class="yt__artist">Netinho de Paula</span><b>Cohab City / Vem Pra Cá</b></figcaption>
+          </figure>
+          <figure class="yt reveal">
+            <button type="button" class="yt__play" data-yt="fKPWJQYGm5U" aria-label="Assistir: Ellen Oléria, Feeling Good (Nina Simone) · Sem Filtro">
+              <img src="img/clipe-ellen.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+            </button>
+            <figcaption><span class="yt__artist">Ellen Oléria</span><b>Feeling Good (Nina Simone) · Sem Filtro</b></figcaption>
+          </figure>
+          <figure class="yt reveal">
+            <button type="button" class="yt__play" data-yt="UblMQbWrwv0" aria-label="Assistir: Quinteto em Branco e Preto, Tour 2012">
+              <img src="img/clipe-quinteto.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+            </button>
+            <figcaption><span class="yt__artist">Quinteto em Branco e Preto</span><b>Tour 2012</b></figcaption>
+          </figure>
         </div>
-      </div>
-      <div class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Foto ampliada">
-        <button type="button" class="lightbox__close" aria-label="Fechar">×</button>
-        <button type="button" class="lightbox__nav lightbox__nav--prev" aria-label="Foto anterior"><svg><use href="#arrow"/></svg></button>
-        <figure><img alt=""><figcaption></figcaption></figure>
-        <button type="button" class="lightbox__nav lightbox__nav--next" aria-label="Próxima foto"><svg><use href="#arrow"/></svg></button>
       </div>
     </section>
 
@@ -400,27 +415,6 @@
           <li class="reveal"><span class="timeline__year">2023</span><div><h3>Grupo Fundo de Quintal</h3><p>Dois shows cobrindo o padrinho Ademir Batera com os mestres do samba</p></div></li>
           <li class="reveal"><span class="timeline__year">2022</span><div><h3>Grupo Envolvência</h3><p>Tour <i>Canta c/ Envolvência</i></p></div></li>
         </ol>
-      </div>
-      <div class="wrap">
-        <div class="yts">
-            <header class="yts__head reveal"><span class="label">Clipes oficiais</span><h3>Com <em>Netinho de Paula</em></h3><p>Léo Carvalho na bateria.</p></header>
-            <div class="yts__grid">
-            <figure class="yt reveal">
-              <button type="button" class="yt__play" data-yt="2uPb0ftkHtM" aria-label="Assistir ao clipe Desengano / Coração Aberto, de Netinho de Paula">
-                <img src="img/clipe-netinho.jpg" alt="" width="1280" height="720" loading="lazy">
-                <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-              </button>
-              <figcaption><b><em>Desengano / Coração Aberto</em></b></figcaption>
-            </figure>
-            <figure class="yt reveal">
-              <button type="button" class="yt__play" data-yt="OAkmI6yg-4M" aria-label="Assistir ao clipe Cohab City / Vem Pra Cá, de Netinho de Paula">
-                <img src="img/clipe-netinho-2.jpg" alt="" width="1280" height="720" loading="lazy">
-                <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-              </button>
-              <figcaption><b><em>Cohab City / Vem Pra Cá</em></b></figcaption>
-            </figure>
-            </div>
-          </div>
       </div>
       <div class="wrap musicals reveal">
         <p class="label">Musicais e orquestra</p>

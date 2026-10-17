@@ -626,7 +626,14 @@ html.intro-on .hero .reveal { opacity: 0 !important; transform: translateY(28px)
 .yt figcaption .label { margin-bottom: 4px; }
 .yt figcaption b { font: 600 clamp(18px, 1.8vw, 24px)/1.2 var(--ff-display); letter-spacing: -.02em; }
 .yt figcaption em { font-style: normal; }
+.yt__artist { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
 .yt__note { color: var(--muted); font-size: 15px; }
+
+/* ---------- clipes (no lugar das fotos) ---------- */
+.clipes { padding: clamp(90px, 12vw, 160px) 0; background: radial-gradient(ellipse at 50% 0%, rgba(227, 25, 44, .22), rgba(227, 25, 44, 0) 60%), var(--ink); }
+.clipes h2 { font-size: clamp(48px, 7vw, 108px); }
+.clipes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 32px); }
+@media (max-width: 760px) { .clipes__grid { grid-template-columns: 1fr; } }
 
 /* ---------- revelar no scroll ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
