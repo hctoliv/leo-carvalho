@@ -606,7 +606,7 @@ html.intro-on .hero .reveal { opacity: 0 !important; transform: translateY(28px)
 @media (max-width: 860px) { .story__video { max-width: none; } }
 
 /* ---------- clipe do YouTube (carrega só ao clicar) ---------- */
-.yts { margin: 0 0 clamp(70px, 9vw, 120px); }
+.yts { margin: clamp(70px, 9vw, 120px) 0 0; }
 .yts__head { margin-bottom: 26px; }
 .yts__head .label { margin-bottom: 12px; }
 .yts__head h3 { font-size: clamp(32px, 3.6vw, 52px); margin-bottom: 8px; }
