@@ -554,25 +554,24 @@ html.intro-on .intro::before { content: ""; position: absolute; inset: 0; backgr
 html.intro-on .hero__video, html.intro-on .hero__title .line > * { animation-play-state: paused; }
 html.intro-on .hero .reveal { opacity: 0 !important; transform: translateY(28px) !important; }
 
-/* ---------- léo: fotos de estúdio, uma por linha ---------- */
-.leo { padding: clamp(90px, 12vw, 160px) 0; }
-.leo__row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(36px, 7vw, 110px); align-items: center; }
-.leo__row + .leo__row { margin-top: clamp(90px, 12vw, 170px); }
+/* ---------- léo: fotos de estúdio, uma por linha (foto sangrando até a borda) ---------- */
+.leo { padding: 0; }
+.leo > .wrap { width: 100%; }
+.leo__row { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: min(92vh, 900px); }
+.leo__row + .leo__row { margin-top: 0; }
 .leo__row--flip .leo__photo { order: 2; }
-.leo__row--wide { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); }
-.leo__row--wide.leo__row--flip { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
-.leo__photo { margin: 0; position: relative; overflow: hidden; background: #d8d8d8; aspect-ratio: 4 / 5; }
-.leo__row--wide .leo__photo { aspect-ratio: 13 / 10; }
-.leo__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transition: transform 1.1s var(--ease); }
-.leo__photo:hover img { transform: scale(1.04); }
-.leo__text { max-width: 460px; }
+.leo__photo { margin: 0; position: relative; overflow: hidden; background: #000; min-height: 100%; }
+.leo__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; transition: transform 1.1s var(--ease); }
+.leo__photo:hover img { transform: scale(1.03); }
+.leo__text { align-self: center; max-width: 560px; padding: clamp(48px, 7vw, 110px); }
+.leo__row--flip .leo__text { justify-self: end; }
 .leo__text h2 { font-size: clamp(40px, 5vw, 76px); }
 .leo__text > p:last-child { color: var(--sand); font-size: 18px; }
 @media (max-width: 860px) {
-  .leo__row, .leo__row--wide, .leo__row--wide.leo__row--flip { grid-template-columns: 1fr; gap: 28px; }
+  .leo__row { grid-template-columns: 1fr; min-height: 0; }
   .leo__row--flip .leo__photo { order: 0; }
-  .leo__photo { aspect-ratio: 4 / 5; }
-  .leo__row--wide .leo__photo { aspect-ratio: 13 / 10; }
+  .leo__photo { min-height: 0; aspect-ratio: 4 / 5; }
+  .leo__text { padding: 36px 16px 64px; max-width: none; }
 }
 
 /* ---------- fotos de estúdio espalhadas pelas seções ---------- */
