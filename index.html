@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans.woff2" crossorigin>
   <link rel="preload" as="image" href="img/vermelho/abertura.jpg">
-  <link rel="stylesheet" href="styles.css?v=36">
+  <link rel="stylesheet" href="styles.css?v=37">
   <script>
     (function () {
       try {
@@ -129,8 +129,7 @@
       <nav class="nav__links" id="menu" aria-label="Principal">
         <a href="#historia">Quem eu sou</a>
         <a href="#videos">Vídeos</a>
-        <a href="#clipes">Clipes</a>
-        <a href="#artistas">Artistas</a>
+                <a href="#artistas">Artistas</a>
         <a href="#apresentacao">Apresentação</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -244,9 +243,48 @@
 
     <!-- VÍDEOS -->
     <section class="videos" id="videos">
-      <div class="wrap">
+      <div class="cinema" data-cinema>
+        <div class="cinema__bg" aria-hidden="true"><img src="img/clipe-netinho.jpg" alt="" data-cinema-bg></div>
+        <div class="wrap">
+          <header class="cinema__head reveal">
+            <p class="label">Vídeos</p>
+            <h2>Dá o <em>play.</em></h2>
+            <p>Clipes oficiais com Léo Carvalho na bateria. Escolha um na lista.</p>
+          </header>
+          <div class="cinema__grid">
+            <div class="cinema__stage reveal">
+              <div class="cinema__screen" data-cinema-screen>
+                <button type="button" class="yt__play" data-cinema-play aria-label="Assistir: Netinho de Paula, Desengano / Coração Aberto">
+                  <img src="img/clipe-netinho.jpg" alt="" width="1280" height="720" data-cinema-cover>
+                  <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
+                </button>
+              </div>
+              <div class="cinema__now"><span class="yt__artist" data-cinema-artist>Netinho de Paula</span><b data-cinema-title>Desengano / Coração Aberto</b></div>
+            </div>
+            <ol class="cinema__list" aria-label="Clipes">
+              <li><button type="button" class="cinema__item is-on" data-clip-id="2uPb0ftkHtM" data-clip-img="img/clipe-netinho.jpg" data-clip-artist="Netinho de Paula" data-clip-title="Desengano / Coração Aberto" aria-pressed="true">
+                <span class="cinema__thumb"><img src="img/clipe-netinho.jpg" alt="" width="1280" height="720" loading="lazy"></span>
+                <span class="cinema__meta"><small>01 · Netinho de Paula</small><b>Desengano / Coração Aberto</b></span>
+              </button></li>
+              <li><button type="button" class="cinema__item" data-clip-id="OAkmI6yg-4M" data-clip-img="img/clipe-netinho-2.jpg" data-clip-artist="Netinho de Paula" data-clip-title="Cohab City / Vem Pra Cá" aria-pressed="false">
+                <span class="cinema__thumb"><img src="img/clipe-netinho-2.jpg" alt="" width="1280" height="720" loading="lazy"></span>
+                <span class="cinema__meta"><small>02 · Netinho de Paula</small><b>Cohab City / Vem Pra Cá</b></span>
+              </button></li>
+              <li><button type="button" class="cinema__item" data-clip-id="fKPWJQYGm5U" data-clip-img="img/clipe-ellen.jpg" data-clip-artist="Ellen Oléria" data-clip-title="Feeling Good (Nina Simone)" aria-pressed="false">
+                <span class="cinema__thumb"><img src="img/clipe-ellen.jpg" alt="" width="1280" height="720" loading="lazy"></span>
+                <span class="cinema__meta"><small>03 · Ellen Oléria</small><b>Feeling Good (Nina Simone)</b></span>
+              </button></li>
+              <li><button type="button" class="cinema__item" data-clip-id="UblMQbWrwv0" data-clip-img="img/clipe-quinteto.jpg" data-clip-artist="Quinteto em Branco e Preto" data-clip-title="Tour 2012" aria-pressed="false">
+                <span class="cinema__thumb"><img src="img/clipe-quinteto.jpg" alt="" width="1280" height="720" loading="lazy"></span>
+                <span class="cinema__meta"><small>04 · Quinteto em Branco e Preto</small><b>Tour 2012</b></span>
+              </button></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div class="wrap videos__reels">
         <header class="section-head reveal">
-          <p class="label">Vídeos</p>
+          <p class="label">Reels</p>
           <h2>Ouça com <em>fone.</em></h2>
           <p>Os vídeos tocam sem som. Toque em um vídeo para ouvir.</p>
         </header>
@@ -309,46 +347,6 @@
       </div>
     </section>
 
-    <!-- CLIPES -->
-    <section class="clipes" id="clipes">
-      <div class="wrap">
-        <header class="section-head reveal">
-          <p class="label">Clipes</p>
-          <h2>Dá o <em>play.</em></h2>
-          <p>Léo Carvalho na bateria, com Netinho de Paula, Ellen Oléria e o Quinteto em Branco e Preto.</p>
-        </header>
-        <div class="clipes__grid">
-          <figure class="yt reveal">
-            <button type="button" class="yt__play" data-yt="2uPb0ftkHtM" aria-label="Assistir: Netinho de Paula, Desengano / Coração Aberto">
-              <img src="img/clipe-netinho.jpg" alt="" width="1280" height="720" loading="lazy">
-              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-            </button>
-            <figcaption><span class="yt__artist">Netinho de Paula</span><b>Desengano / Coração Aberto</b></figcaption>
-          </figure>
-          <figure class="yt reveal">
-            <button type="button" class="yt__play" data-yt="OAkmI6yg-4M" aria-label="Assistir: Netinho de Paula, Cohab City / Vem Pra Cá">
-              <img src="img/clipe-netinho-2.jpg" alt="" width="1280" height="720" loading="lazy">
-              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-            </button>
-            <figcaption><span class="yt__artist">Netinho de Paula</span><b>Cohab City / Vem Pra Cá</b></figcaption>
-          </figure>
-          <figure class="yt reveal">
-            <button type="button" class="yt__play" data-yt="fKPWJQYGm5U" aria-label="Assistir: Ellen Oléria, Feeling Good (Nina Simone) · Sem Filtro">
-              <img src="img/clipe-ellen.jpg" alt="" width="1280" height="720" loading="lazy">
-              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-            </button>
-            <figcaption><span class="yt__artist">Ellen Oléria</span><b>Feeling Good (Nina Simone) · Sem Filtro</b></figcaption>
-          </figure>
-          <figure class="yt reveal">
-            <button type="button" class="yt__play" data-yt="UblMQbWrwv0" aria-label="Assistir: Quinteto em Branco e Preto, Tour 2012">
-              <img src="img/clipe-quinteto.jpg" alt="" width="1280" height="720" loading="lazy">
-              <span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span>
-            </button>
-            <figcaption><span class="yt__artist">Quinteto em Branco e Preto</span><b>Tour 2012</b></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
 
     <!-- ARTISTAS -->
     <section class="artists" id="artistas">
@@ -619,6 +617,6 @@
     </div>
   </footer>
 
-  <script src="main.js?v=32" defer></script>
+  <script src="main.js?v=37" defer></script>
 </body>
 </html>

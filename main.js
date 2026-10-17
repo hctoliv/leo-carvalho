@@ -294,12 +294,37 @@
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 })();
 
-// clipe do YouTube: troca a capa pelo player só no clique
-document.querySelectorAll('[data-yt]').forEach(btn => btn.addEventListener('click', () => {
-  const f = document.createElement('iframe');
-  f.src = `https://www.youtube-nocookie.com/embed/${btn.dataset.yt}?autoplay=1&rel=0`;
-  f.title = btn.getAttribute('aria-label');
-  f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-  f.allowFullscreen = true;
-  btn.replaceWith(f);
-}));
+// vídeos: cinema com playlist; o player do YouTube só carrega no play
+(() => {
+  const cin = document.querySelector('[data-cinema]');
+  if (!cin) return;
+  const screen = cin.querySelector('[data-cinema-screen]');
+  const bg = cin.querySelector('[data-cinema-bg]');
+  const artist = cin.querySelector('[data-cinema-artist]');
+  const title = cin.querySelector('[data-cinema-title]');
+  const items = [...cin.querySelectorAll('.cinema__item')];
+  let current = items[0];
+  const cover = it => `<button type="button" class="yt__play" data-cinema-play aria-label="Assistir: ${it.dataset.clipArtist}, ${it.dataset.clipTitle}"><img src="${it.dataset.clipImg}" alt="" width="1280" height="720"><span class="yt__btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l10.5-6.5z"/></svg></span></button>`;
+  const play = () => {
+    const f = document.createElement('iframe');
+    f.src = `https://www.youtube-nocookie.com/embed/${current.dataset.clipId}?autoplay=1&rel=0`;
+    f.title = `${current.dataset.clipArtist}, ${current.dataset.clipTitle}`;
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    screen.innerHTML = ''; screen.appendChild(f);
+  };
+  const select = (it, autoplay) => {
+    current = it;
+    items.forEach(x => { x.classList.toggle('is-on', x === it); x.setAttribute('aria-pressed', x === it); });
+    artist.textContent = it.dataset.clipArtist; title.textContent = it.dataset.clipTitle;
+    bg.style.opacity = 0;
+    setTimeout(() => { bg.src = it.dataset.clipImg; bg.style.opacity = 1; }, 250);
+    if (autoplay) play(); else screen.innerHTML = cover(it);
+  };
+  screen.addEventListener('click', e => { if (e.target.closest('[data-cinema-play]')) play(); });
+  // escolher na lista já toca (é um clique do visitante); no celular rola até o player
+  items.forEach(it => it.addEventListener('click', () => {
+    select(it, true);
+    if (innerWidth < 960) screen.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }));
+})();

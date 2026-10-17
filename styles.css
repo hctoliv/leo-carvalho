@@ -629,11 +629,41 @@ html.intro-on .hero .reveal { opacity: 0 !important; transform: translateY(28px)
 .yt__artist { font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
 .yt__note { color: var(--muted); font-size: 15px; }
 
-/* ---------- clipes (no lugar das fotos) ---------- */
-.clipes { padding: clamp(90px, 12vw, 160px) 0; background: radial-gradient(ellipse at 50% 0%, rgba(227, 25, 44, .22), rgba(227, 25, 44, 0) 60%), var(--ink); }
-.clipes h2 { font-size: clamp(48px, 7vw, 108px); }
-.clipes__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2.4vw, 32px); }
-@media (max-width: 760px) { .clipes__grid { grid-template-columns: 1fr; } }
+/* ---------- vídeos: cinema com playlist ---------- */
+.videos { padding-top: 0; }
+.cinema { position: relative; overflow: hidden; isolation: isolate; padding: clamp(90px, 11vw, 150px) 0 clamp(80px, 10vw, 130px); margin-bottom: clamp(70px, 9vw, 120px); }
+.cinema__bg { position: absolute; inset: -60px; z-index: -1; }
+.cinema__bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(48px) saturate(1.3) brightness(.45); transform: scale(1.15); transition: opacity .6s; }
+.cinema__bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 8, 8, .55), rgba(11, 8, 8, .25) 40%, var(--char) 100%), radial-gradient(ellipse at 30% 40%, rgba(227, 25, 44, .35), rgba(227, 25, 44, 0) 60%); }
+.cinema__head { margin-bottom: clamp(32px, 4vw, 52px); }
+.cinema__head h2 { font-size: clamp(52px, 8vw, 128px); margin-bottom: 12px; }
+.cinema__head p { color: var(--sand); margin: 0; }
+.cinema__grid { display: grid; grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr); gap: clamp(18px, 2.4vw, 32px); align-items: start; }
+.cinema__screen { position: relative; aspect-ratio: 16 / 9; background: #000; box-shadow: 0 40px 100px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(255, 255, 255, .08); overflow: hidden; }
+.cinema__screen .yt__play { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; }
+.cinema__screen iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.cinema__now { display: grid; gap: 4px; margin-top: 18px; }
+.cinema__now b { font: 600 clamp(22px, 2.4vw, 34px)/1.15 var(--ff-display); letter-spacing: -.02em; }
+.cinema__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: c; }
+.cinema__item { width: 100%; display: grid; grid-template-columns: 42% 1fr; gap: 14px; align-items: center; padding: 8px; background: rgba(255, 255, 255, .04); border: 1px solid rgba(255, 255, 255, .08); color: inherit; text-align: left; cursor: pointer; transition: background .25s, border-color .25s, transform .3s var(--ease); }
+.cinema__item:hover { background: rgba(255, 255, 255, .08); transform: translateX(4px); }
+.cinema__item.is-on { background: rgba(227, 25, 44, .16); border-color: var(--gold); }
+.cinema__thumb { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
+.cinema__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.cinema__item.is-on .cinema__thumb::after { content: "Tocando"; position: absolute; left: 6px; bottom: 6px; padding: 3px 7px; background: var(--gold); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.cinema__meta { display: grid; gap: 4px; min-width: 0; }
+.cinema__meta small { font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-hi); }
+.cinema__meta b { font-weight: 600; font-size: 15px; line-height: 1.25; }
+.videos__reels .section-head h2 { font-size: clamp(40px, 5vw, 76px); }
+@media (max-width: 960px) {
+  .cinema__grid { grid-template-columns: 1fr; }
+  .cinema__list { grid-template-columns: 1fr 1fr; }
+  .cinema__item { grid-template-columns: 1fr; gap: 8px; }
+}
+@media (max-width: 520px) {
+  .cinema__list { grid-template-columns: 1fr; }
+  .cinema__item { grid-template-columns: 40% 1fr; }
+}
 
 /* ---------- revelar no scroll ---------- */
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s var(--ease), transform 1s var(--ease); }
